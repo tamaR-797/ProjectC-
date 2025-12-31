@@ -1,0 +1,14 @@
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\bin\Debug\net8.0\Parameters.exe
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\bin\Debug\net8.0\Parameters.deps.json
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\bin\Debug\net8.0\Parameters.runtimeconfig.json
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\bin\Debug\net8.0\Parameters.dll
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\bin\Debug\net8.0\Parameters.pdb
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\Parameters.GeneratedMSBuildEditorConfig.editorconfig
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\Parameters.AssemblyInfoInputs.cache
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\Parameters.AssemblyInfo.cs
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\Parameters.csproj.CoreCompileInputs.cache
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\Parameters.dll
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\refint\Parameters.dll
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\Parameters.pdb
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\Parameters.genruntimeconfig.cache
+M:\מילגות\C# .Net\1 שליחת פרמטרים לפונקציה\Parameters\Parameters\obj\Debug\net8.0\ref\Parameters.dll
