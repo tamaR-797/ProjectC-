@@ -4,7 +4,7 @@ using static Dal.DataSource;
 
 namespace Dal
 {
-    publ class SaleImplementation :ISale
+    public class SaleImplementation :ISale
     {
     
 
