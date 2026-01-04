@@ -47,42 +47,44 @@
   },
   "packageFolders": {
     "C:\\Users\\huser\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\יד תשפו\\רותן תמר\\C# .Net\\ProjectC#\\DotNet2026_7532_7156\\DalTest\\DalTest.csproj",
+      "projectUniqueName": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalTest\\DalTest.csproj",
       "projectName": "DalTest",
-      "projectPath": "Z:\\יד תשפו\\רותן תמר\\C# .Net\\ProjectC#\\DotNet2026_7532_7156\\DalTest\\DalTest.csproj",
+      "projectPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalTest\\DalTest.csproj",
       "packagesPath": "C:\\Users\\huser\\.nuget\\packages\\",
-      "outputPath": "Z:\\יד תשפו\\רותן תמר\\C# .Net\\ProjectC#\\DotNet2026_7532_7156\\DalTest\\obj\\",
+      "outputPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\huser\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "Z:\\יד תשפו\\רותן תמר\\C# .Net\\ProjectC#\\DotNet2026_7532_7156\\DalFacade\\DalFacade.csproj": {
-              "projectPath": "Z:\\יד תשפו\\רותן תמר\\C# .Net\\ProjectC#\\DotNet2026_7532_7156\\DalFacade\\DalFacade.csproj"
+            "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalFacade\\DalFacade.csproj": {
+              "projectPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalFacade\\DalFacade.csproj"
             },
-            "Z:\\יד תשפו\\רותן תמר\\C# .Net\\ProjectC#\\DotNet2026_7532_7156\\DalList\\DalList.csproj": {
-              "projectPath": "Z:\\יד תשפו\\רותן תמר\\C# .Net\\ProjectC#\\DotNet2026_7532_7156\\DalList\\DalList.csproj"
+            "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalList\\DalList.csproj": {
+              "projectPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalList\\DalList.csproj"
             }
           }
         }
@@ -91,13 +93,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -108,17 +104,11 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
