@@ -1,0 +1,6 @@
+Z:\יד תשפו\רותן תמר\C# .Net\ProjectC#\DotNet2026_7532_7156\DalTest\obj\Debug\DalTest.csproj.AssemblyReference.cache
+Z:\יד תשפו\רותן תמר\C# .Net\ProjectC#\DotNet2026_7532_7156\DalTest\obj\Debug\DalTest.GeneratedMSBuildEditorConfig.editorconfig
+Z:\יד תשפו\רותן תמר\C# .Net\ProjectC#\DotNet2026_7532_7156\DalTest\obj\Debug\DalTest.AssemblyInfoInputs.cache
+Z:\יד תשפו\רותן תמר\C# .Net\ProjectC#\DotNet2026_7532_7156\DalTest\obj\Debug\DalTest.AssemblyInfo.cs
+Z:\יד תשפו\רותן תמר\C# .Net\ProjectC#\DotNet2026_7532_7156\DalTest\obj\Debug\DalTest.csproj.CoreCompileInputs.cache
+Z:\יד תשפו\רותן תמר\C# .Net\ProjectC#\DotNet2026_7532_7156\DalTest\obj\Debug\DalTest.sourcelink.json

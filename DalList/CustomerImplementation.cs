@@ -1,28 +1,29 @@
 ﻿using DalApi;
 using DO;
 using static Dal.DataSource;
+
 namespace Dal
 {
-    public class CustomerImplementation : ICustomer
+    internal class CustomerImplementation : ICustomer
     {
         public int Create(Customer item)
         {
-            foreach (var c in customerss)
+            foreach (var c in customers)
             {
-                if (item?.CustId == c.CustId)
-                    throw new Exception("the sale already exists");
+                if (item.CustId == c?.CustId)
+                    throw new Exception();
             }
-            int id = Config.getStaicValue;
-            Customer customer = item with { CustId = id };
-            customerss.Add(customer);
+            int id = Config.getStaticValue;
+            Customer cust = item with { CustId = id };
+            customers.Add(cust);
             return id;
         }
 
         public Customer? Read(int id)
         {
-            foreach (var c in customerss)
+            foreach (var c in customers)
             {
-                if (id == c.CustId)
+                if (id == c?.CustId)
                     return c;
             }
             throw new NotImplementedException();
@@ -30,31 +31,24 @@ namespace Dal
 
         public List<Customer> ReadAll()
         {
-            return customerss;
+            return customers;
         }
 
         public void Update(Customer item)
         {
-            foreach (var c in customerss)
-            {
-                if (item.CustId == c.CustId)
-                {
-                    customerss.Remove(c);
-                    customerss.Add(item);
-                }
-
-                return;
-            }
-            throw new NotImplementedException();
+            if (item.CustId == null)
+                throw new Exception("Product ID cannot be null.");
+            Delete(item.CustId);
+            customers.Add(item);
         }
 
         public void Delete(int id)
         {
-            foreach (var c in customerss)
+            foreach (var c in customers)
             {
                 if (id == c.CustId)
                 {
-                    customerss.Remove(c);
+                    customers.Remove(c);
                     return;
                 }
             }
@@ -62,3 +56,4 @@ namespace Dal
         }
     }
 }
+

@@ -4,19 +4,23 @@ using static Dal.DataSource;
 
 namespace Dal
 {
-    internal class SaleImplementation : ISale
+    publ class SaleImplementation :ISale
     {
+    
+
         public int Create(Sale item)
         {
+
             foreach (var s in sales)
             {
                 if (item?.SaleId == s.SaleId)
-                    throw new Exception("the sale already exists");
+                    throw new Exception();
             }
-            int id = Config.getStaicValue;
+            int id = Config.getStaticValue;
             Sale sale = item with { SaleId = id };
             sales.Add(sale);
             return id;
+
         }
         public Sale? Read(int id)
         {
@@ -24,17 +28,28 @@ namespace Dal
             {
                 if (id == s.SaleId)
                     return s;
+
             }
+            throw new Exception("not found");
             throw new NotImplementedException();
         }
         public List<Sale> ReadAll()
-        {
-            return sales;
+        {       if(sales!=null)
+                return sales;
+            throw new NotImplementedException();
         }
         public void Update(Sale item)
         {
-            Delete(item.SaleId);
-            sales.Add(item);
+            foreach (var s in sales)
+            {
+                if (item?.SaleId == s.SaleId)
+                {
+                    sales.Remove(s);
+                    sales.Add(item);
+                    return;
+                }
+
+            }
         }
         public void Delete(int id)
         {
@@ -49,4 +64,6 @@ namespace Dal
             throw new NotImplementedException();
         }
     }
+
 }
+

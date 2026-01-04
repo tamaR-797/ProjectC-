@@ -1,9 +1,13 @@
 ﻿
+using System.Runtime.CompilerServices;
+
 namespace DO
 {
-    public record Product(int ProdId = 0, string? ProdName = null, Categories? category = Categories.DRESSES, double ?ProdPrice = 0, int ?QuantityInStock = 0)
+    public record Product(int? ProdId, string? ProdName, Categories? category, double? ProdPrice, int? QuantityInStock)
     {
-        public Product() : this(0,"") { }
-
+        public Product() : this(0, "", Categories.DRESSES, 0, 0)
+        {
+        }
     }
+
 }
