@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DO
 {
-     record Customer(string CustId, string CustName,string CustAddress,string CustPhone)
+   public  record Customer(int CustId=0, string ?CustName=null,string ?CustAddress=null,string ?CustPhone=null)
     {
-        Constructor = this;
+
     }
 }
