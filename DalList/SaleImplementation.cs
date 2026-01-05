@@ -1,10 +1,11 @@
 ﻿using DalApi;
 using DO;
+using Dal;
 using static Dal.DataSource;
 
 namespace Dal
 {
-    public class SaleImplementation :ISale
+    internal class SaleImplementation :ISale
     {
     
 
@@ -16,7 +17,7 @@ namespace Dal
                 if (item?.SaleId == s.SaleId)
                     throw new Exception();
             }
-            int id = Config.getStaticValue;
+            int id = Config.getStaticValueSale;
             Sale sale = item with { SaleId = id };
             sales.Add(sale);
             return id;

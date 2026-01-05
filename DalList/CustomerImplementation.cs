@@ -13,7 +13,7 @@ namespace Dal
                 if (item.CustId == c?.CustId)
                     throw new Exception();
             }
-            int id = Config.getStaticValue;
+            int id = Config.getStaticValueCustomer;
             Customer cust = item with { CustId = id };
             customers.Add(cust);
             return id;

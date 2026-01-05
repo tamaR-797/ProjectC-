@@ -1,58 +1,58 @@
 ﻿
 using DalApi;
 using DO;
-using static Dal.DataSource;
-namespace Dal
+using Dal;   
+using DalList.DataSource;
+namespace DalList;
+
+internal class ProductImplementation : IProduct
 {
-    internal class ProductImplementation : IProduct
+    public int Create(Product item)
     {
-        public int Create(Product item)
-        {
 
-            foreach (var p in products)
+        foreach (var p in products)
+        {
+            if (item.ProdId == p?.ProdId)
+                throw new Exception();
+        }
+        int id = Config.getStaticValueProduct;
+        Product product = item with { ProdId = id };
+        products.Add(product);
+        return id;
+
+    }
+    public Product? Read(int id)
+    {
+        foreach (var p in products)
+        {
+            if (id == p.ProdId)
+                return p;
+
+        }
+        throw new NotImplementedException();
+    }
+    public List<Product> ReadAll()
+    {
+        return products;
+    }
+    public void Update(Product item)
+    {
+        if (item.ProdId == null)
+            throw new Exception("Product ID cannot be null.");
+        Delete(item.ProdId.Value);
+        products.Add(item);
+    }
+    public void Delete(int id)
+    {
+        foreach (var p in products)
+        {
+            if (id == p.ProdId)
             {
-                if (item.ProdId == p?.ProdId)
-                    throw new Exception();
+                products.Remove(p);
+                return;
             }
-            int id = Config.getStaticValue;
-            Product product = item with { ProdId = id };
-            products.Add(product);
-            return id;
+        }
+        throw new NotImplementedException();
 
-        }
-        public Product? Read(int id)
-        {
-            foreach (var p in products)
-            {
-                if (id == p.ProdId)
-                    return p;
-
-            }
-            throw new NotImplementedException();
-        }
-        public List<Product> ReadAll()
-        {
-            return products;
-        }
-        public void Update(Product item)
-        {
-            if (item.ProdId == null)
-                throw new Exception("Product ID cannot be null.");
-            Delete(item.ProdId.Value);
-            products.Add(item);
-        }
-        public void Delete(int id)
-        {
-            foreach (var p in products)
-            {
-                if (id == p.ProdId)
-                {
-                    products.Remove(p);
-                    return;
-                }
-            }
-            throw new NotImplementedException();
-
-        }
     }
 }
