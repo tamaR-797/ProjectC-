@@ -29,15 +29,15 @@ namespace Dal
             throw new NotImplementedException();
         }
 
-        public List<Customer> ReadAll()
+        public List<Customer?> ReadAll()
         {
             return customers;
         }
 
         public void Update(Customer item)
         {
-            if (item.CustId == null)
-                throw new Exception("Product ID cannot be null.");
+            if (item == null)
+                throw new Exception("Product  cannot be null.");
             Delete(item.CustId);
             customers.Add(item);
         }

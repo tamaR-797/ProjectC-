@@ -3,68 +3,60 @@ using DO;
 using Dal;
 using static Dal.DataSource;
 
-namespace Dal
+namespace DalList
 {
     internal class SaleImplementation :ISale
     {
-    
+
 
         public int Create(Sale item)
         {
-
-            foreach (var s in sales)
+            foreach (var c in sales)
             {
-                if (item?.SaleId == s.SaleId)
+                if (item.SaleId == c?.SaleId)
                     throw new Exception();
             }
             int id = Config.getStaticValueSale;
             Sale sale = item with { SaleId = id };
             sales.Add(sale);
             return id;
-
         }
+
         public Sale? Read(int id)
         {
-            foreach (var s in sales)
+            foreach (var c in sales)
             {
-                if (id == s.SaleId)
-                    return s;
-
+                if (id == c?.SaleId)
+                    return c;
             }
-            throw new Exception("not found");
             throw new NotImplementedException();
         }
-        public List<Sale> ReadAll()
-        {       if(sales!=null)
-                return sales;
-            throw new NotImplementedException();
+
+        public List<Sale?> ReadAll()
+        {
+            return sales;
         }
+
         public void Update(Sale item)
         {
-            foreach (var s in sales)
-            {
-                if (item?.SaleId == s.SaleId)
-                {
-                    sales.Remove(s);
-                    sales.Add(item);
-                    return;
-                }
-
-            }
+            if (item == null)
+                throw new Exception("Product  cannot be null.");
+            Delete(item.SaleId);
+            sales.Add(item);
         }
+
         public void Delete(int id)
         {
-            foreach (var s in sales)
+            foreach (var c in sales)
             {
-                if (id == s.SaleId)
+                if (id == c.SaleId)
                 {
-                    sales.Remove(s);
+                    sales.Remove(c);
                     return;
                 }
             }
             throw new NotImplementedException();
         }
     }
-
 }
 
