@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DalList;
 
-namespace Dal
-{
+namespace Dal;
+
     public class DalList:IDal
     {
         public ISale Sale => new SaleImplementation();
@@ -15,4 +15,4 @@ namespace Dal
         public ICustomer Customer => new CustomerImplementation();
 
     }
-}
+

@@ -52,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalTest\\DalTest.csproj",
+      "projectUniqueName": "Z:\\יד תשפו\\הלוי דבורה\\c#-רחלי כהן\\Project\\git\\ProjectCs\\DalTest\\DalTest.csproj",
       "projectName": "DalTest",
-      "projectPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalTest\\DalTest.csproj",
+      "projectPath": "Z:\\יד תשפו\\הלוי דבורה\\c#-רחלי כהן\\Project\\git\\ProjectCs\\DalTest\\DalTest.csproj",
       "packagesPath": "C:\\Users\\huser\\.nuget\\packages\\",
-      "outputPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalTest\\obj\\",
+      "outputPath": "Z:\\יד תשפו\\הלוי דבורה\\c#-רחלי כהן\\Project\\git\\ProjectCs\\DalTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -77,11 +77,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalFacade\\DalFacade.csproj": {
-              "projectPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalFacade\\DalFacade.csproj"
+            "Z:\\יד תשפו\\הלוי דבורה\\c#-רחלי כהן\\Project\\git\\ProjectCs\\DalFacade\\DalFacade.csproj": {
+              "projectPath": "Z:\\יד תשפו\\הלוי דבורה\\c#-רחלי כהן\\Project\\git\\ProjectCs\\DalFacade\\DalFacade.csproj"
             },
-            "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalList\\DalList.csproj": {
-              "projectPath": "Z:\\יד תשפו\\רותן תמר\\New folder (2)\\ProjectCs\\DalList\\DalList.csproj"
+            "Z:\\יד תשפו\\הלוי דבורה\\c#-רחלי כהן\\Project\\git\\ProjectCs\\DalList\\DalList.csproj": {
+              "projectPath": "Z:\\יד תשפו\\הלוי דבורה\\c#-רחלי כהן\\Project\\git\\ProjectCs\\DalList\\DalList.csproj"
             }
           }
         }
