@@ -11,7 +11,7 @@ namespace Dal
             foreach (var c in customers)
             {
                 if (item.CustId == c?.CustId)
-                    throw new Exception();
+                    throw new Exception("this id exsisting!");
             }
             int id = Config.getStaticValueCustomer;
             Customer cust = item with { CustId = id };
@@ -26,7 +26,7 @@ namespace Dal
                 if (id == c?.CustId)
                     return c;
             }
-            throw new NotImplementedException();
+            throw new NotImplementedException("not existing!");
         }
 
         public List<Customer?> ReadAll()
@@ -35,18 +35,30 @@ namespace Dal
         }
 
         public void Update(Customer item)
-        {
+        {bool f=false;
             if (item == null)
                 throw new Exception("Product  cannot be null.");
-            Delete(item.CustId);
-            customers.Add(item);
+            foreach (var c in customers)
+            {
+                if (item.CustId == c?.CustId)
+                {
+                    f = true;
+                    Delete(item.CustId);
+                    customers.Add(item);
+                    return;
+                }
+            }
+            if (!f)
+            {
+                throw new Exception("not id existing!");
+            }
         }
 
         public void Delete(int id)
         {
             foreach (var c in customers)
             {
-                if (id == c.CustId)
+                if (id == c?.CustId)
                 {
                     customers.Remove(c);
                     return;

@@ -14,7 +14,7 @@ namespace DalList
             foreach (var c in sales)
             {
                 if (item.SaleId == c?.SaleId)
-                    throw new Exception();
+                    throw new Exception("this id existing!");
             }
             int id = Config.getStaticValueSale;
             Sale sale = item with { SaleId = id };
@@ -29,7 +29,7 @@ namespace DalList
                 if (id == c?.SaleId)
                     return c;
             }
-            throw new NotImplementedException();
+            throw new NotImplementedException("not existing!");
         }
 
         public List<Sale?> ReadAll()
@@ -39,17 +39,31 @@ namespace DalList
 
         public void Update(Sale item)
         {
+            bool f = false;
             if (item == null)
                 throw new Exception("Product  cannot be null.");
-            Delete(item.SaleId);
-            sales.Add(item);
+            foreach (var c in sales)
+            {
+                if (item.SaleId == c?.SaleId)
+                {
+                    f=true;
+                    Delete(item.SaleId);
+                    sales.Add(item);
+                    return;
+                }    
+            }
+            if (!f)
+            {
+                throw new Exception("not id existing!");
+            }
+           
         }
 
         public void Delete(int id)
         {
             foreach (var c in sales)
             {
-                if (id == c.SaleId)
+                if (id == c?.SaleId)
                 {
                     sales.Remove(c);
                     return;

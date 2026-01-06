@@ -15,7 +15,7 @@ internal class ProductImplementation : IProduct
         foreach (var p in products)
         {
             if (item.ProdId == p?.ProdId)
-                throw new Exception();
+                throw new Exception("this id existing!");
         }
         int id = Config.getStaticValueProduct;
         Product product = item with { ProdId = id };
@@ -31,7 +31,7 @@ internal class ProductImplementation : IProduct
                 return p;
 
         }
-        throw new NotImplementedException();
+        throw new NotImplementedException("not existing!");
     }
     public List<Product?> ReadAll()
     {
@@ -39,16 +39,31 @@ internal class ProductImplementation : IProduct
     }
     public void Update(Product item)
     {
+        bool f = false;
         if (item == null)
             throw new Exception("Product  cannot be null.");
-        Delete(item.ProdId);
-        products.Add(item);
+        foreach (var p in products)
+        {
+            if (item.ProdId == p?.ProdId)
+            {
+                f = true;
+                Delete(item.ProdId);
+                products.Add(item);
+                return;
+            }
+        }
+        if (!f)
+        {
+            throw new Exception("not id existing!");
+        }
+
+     
     }
     public void Delete(int id)
     {
         foreach (var p in products)
         {
-            if (id == p.ProdId)
+            if (id == p?.ProdId)
             {
                 products.Remove(p);
                 return;
