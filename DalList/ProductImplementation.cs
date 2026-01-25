@@ -1,9 +1,9 @@
-﻿
+﻿//למימוש עם linq
 using DalApi;
 using DO;
-using Dal;  
+using Dal;
 using static Dal.DataSource;
-
+using System.Linq;
 
 namespace DalList;
 
@@ -11,65 +11,130 @@ internal class ProductImplementation : IProduct
 {
     public int Create(Product item)
     {
+        if (products.Any(p => item.ProdId == p?.ProdId))
+            throw new IdAlreadyExistsException($"{item.ProdId}");
 
-        foreach (var p in products)
-        {
-            if (item.ProdId == p?.ProdId)
-                throw new Exception("this id existing!");
-        }
         int id = Config.getStaticValueProduct;
         Product product = item with { ProdId = id };
         products.Add(product);
         return id;
-        
     }
+
     public Product Read(int id)
     {
-        foreach (var p in products)
-        {
-            if (id == p.ProdId)
-                return p;
-
-        }
-        throw new NotImplementedException("not existing!");
+        var product = products.FirstOrDefault(p => id == p?.ProdId);
+        if (product == null)
+            throw new IdNotFoundException($"{id}");
+        return product;
     }
+
     public List<Product?> ReadAll()
     {
-        return products;
+        return products.ToList();
     }
+
     public void Update(Product item)
     {
-        bool f = false;
         if (item == null)
-            throw new Exception("Product  cannot be null.");
-        foreach (var p in products)
-        {
-            if (item.ProdId == p?.ProdId)
-            {
-                f = true;
-                Delete(item.ProdId);
-                products.Add(item);
-                return;
-            }
-        }
-        if (!f)
-        {
-            throw new Exception("not id existing!");
-        }
+            throw new NullItemException("Product cannot be null.");
 
-     
+        var existingProduct = products.FirstOrDefault(p => item.ProdId == p?.ProdId);
+        if (existingProduct != null)
+        {
+            Delete(item.ProdId);
+            products.Add(item);
+        }
+        else
+        {
+            throw new IdNotFoundException($"{item.ProdId}");
+        }
     }
+
     public void Delete(int id)
     {
-        foreach (var p in products)
+        var product = products.FirstOrDefault(p => id == p?.ProdId);
+        if (product != null)
         {
-            if (id == p?.ProdId)
-            {
-                products.Remove(p);
-                return;
-            }
+            products.Remove(product);
         }
-        throw new NotImplementedException();
-
+        else
+        {
+            throw new NullItemException("Product cannot be null.");
+        }
     }
 }
+
+//using DalApi;
+//using DO;
+//using Dal;  
+//using static Dal.DataSource;
+
+
+//namespace DalList;
+
+//internal class ProductImplementation : IProduct
+//{
+//    public int Create(Product item)
+//    {
+
+//        foreach (var p in products)
+//        {
+//            if (item.ProdId == p?.ProdId)
+//                throw new Exception("this id existing!");
+//        }
+//        int id = Config.getStaticValueProduct;
+//        Product product = item with { ProdId = id };
+//        products.Add(product);
+//        return id;
+
+//    }
+//    public Product Read(int id)
+//    {
+//        foreach (var p in products)
+//        {
+//            if (id == p.ProdId)
+//                return p;
+
+//        }
+//        throw new NotImplementedException("not existing!");
+//    }
+//    public List<Product?> ReadAll()
+//    {
+//        return products;
+//    }
+//    public void Update(Product item)
+//    {
+//        bool f = false;
+//        if (item == null)
+//            throw new Exception("Product  cannot be null.");
+//        foreach (var p in products)
+//        {
+//            if (item.ProdId == p?.ProdId)
+//            {
+//                f = true;
+//                Delete(item.ProdId);
+//                products.Add(item);
+//                return;
+//            }
+//        }
+//        if (!f)
+//        {
+//            throw new Exception("not id existing!");
+//        }
+
+
+//    }
+//    public void Delete(int id)
+//    {
+//        foreach (var p in products)
+//        {
+//            if (id == p?.ProdId)
+//            {
+//                products.Remove(p);
+//                return;
+//            }
+//        }
+//        throw new NotImplementedException();
+
+//    }
+//}
